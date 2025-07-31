@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>생일 축하 이벤트</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 자물쇠 화면 -->
+    <div id="lockScreen" class="lock-screen">
+        <div class="stars"></div>
+        <div class="lock-container">
+            <div class="lock-icon" id="lockIcon">
+                <div class="lock-body"></div>
+                <div class="lock-shackle"></div>
+                <div class="sparkles">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                </div>
+            </div>
+            <p class="lock-message" id="lockMessage">특별한 시간까지 기다려주세요...</p>
+            <div class="countdown" id="countdown"></div>
+        </div>
+    </div>
+
+    <!-- 비밀번호 입력 화면 -->
+    <div id="passwordScreen" class="password-screen hidden">
+        <div class="password-container">
+            <h2>비밀번호를 입력하세요</h2>
+            <div class="password-display">
+                <div class="password-dots" id="passwordDots"></div>
+            </div>
+            <div class="keypad">
+                <button class="key-btn" data-num="1">1</button>
+                <button class="key-btn" data-num="2">2</button>
+                <button class="key-btn" data-num="3">3</button>
+                <button class="key-btn" data-num="4">4</button>
+                <button class="key-btn" data-num="5">5</button>
+                <button class="key-btn" data-num="6">6</button>
+                <button class="key-btn" data-num="7">7</button>
+                <button class="key-btn" data-num="8">8</button>
+                <button class="key-btn" data-num="9">9</button>
+                <button class="key-btn clear" id="clearBtn">×</button>
+                <button class="key-btn" data-num="0">0</button>
+                <button class="key-btn enter" id="enterBtn">✓</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 생일 축하 페이지 -->
+    <div id="birthdayPage" class="birthday-page hidden">
+        <!-- 배경 음악 -->
+        <audio id="backgroundMusic" loop>
+            <source src="birthday-music.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- 섹션 1: 생일 축하 메시지 -->
+        <section class="section birthday-greeting">
+            <video id="greetingBackgroundVideo" class="greeting-bg-video" autoplay muted loop playsinline>
+                <source src="greeting-background.mp4" type="video/mp4">
+            </video>
+            <div class="greeting-content">
+                <div class="birthday-text">
+                    <br><br>
+                    <h1 class="birthday-title">🎉 ㅇㅇ의 생일을 축하합니다! 🎉</h1>
+                    <div class="birthday-decorations">
+                        <div class="confetti">
+                            <div class="confetti-piece"></div>
+                            <div class="confetti-piece"></div>
+                            <div class="confetti-piece"></div>
+                            <div class="confetti-piece"></div>
+                            <div class="confetti-piece"></div>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+                <div class="scroll-indicator">
+                    <span>아래로 스크롤하세요</span>
+                    <div class="scroll-arrow">↓</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 비디오 섹션 -->
+        <section class="section video-section">
+            <div class="video-container">
+                <video id="backgroundVideo" class="celebration-video" muted controls="false">
+                    <source src="background-video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 편지 -->
+        <section class="section letter-section">
+            <div class="letter-container">
+                <div class="letter-paper">
+                    <div class="letter-header">💌 마음을 담은 편지</div>
+                    <div class="letter-content" id="letterContent">
+                        <!-- 편지 내용이 동적으로 생성됩니다 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 사진 갤러리 -->
+        <section class="section photo-section">
+            <div class="photo-gallery">
+                <h2 class="gallery-title">소중한 추억들 📸</h2>
+                <div class="polaroid-container" id="photoContainer">
+                    <div class="polaroid">
+                        <img src="photo1.jpg" alt="추억 사진 1">
+                        <div class="polaroid-caption">첫 만남의 그날</div>
+                    </div>
+                    <div class="polaroid">
+                        <img src="photo2.jpg" alt="추억 사진 2">
+                        <div class="polaroid-caption">함께한 여행</div>
+                    </div>
+                    <div class="polaroid">
+                        <img src="photo3.jpg" alt="추억 사진 3">
+                        <div class="polaroid-caption">행복한 순간</div>
+                    </div>
+                    <div class="polaroid">
+                        <img src="photo4.jpg" alt="추억 사진 4">
+                        <div class="polaroid-caption">웃음이 가득한 날</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
